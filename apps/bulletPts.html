@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+
+  <style>
+    .todoItem:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="todos">
+    <h2>Pending Todos</h2>
+    <ul>
+      <li class="todoItem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, animi.</li>
+      <li class="todoItem">Numquam dolor quo alias nam vel voluptates magni magnam quisquam.</li>
+      <li class="todoItem">Recusandae eaque quisquam facere ab reprehenderit cupiditate magni placeat quis?</li>
+      <li class="todoItem">Expedita asperiores nam saepe voluptatem, nostrum aliquid debitis quam recusandae.</li>
+      <li class="todoItem">Quaerat velit deserunt reprehenderit, vel placeat impedit accusamus non, deleniti!</li>
+    </ul>
+  </div>
+
+  <h2>Completed Todos</h2>
+  <ul class="completedTodoWrapper">
+    <div class="completed"></div>
+    <!-- Element goes here -->
+
+    </ul>
+</body>
+
+
+
+
+
+<script>
+
+
+  const todo = document.querySelectorAll('.todoItem');
+  const completed = document.querySelector('.completed');
+  const completedTodoWrapper = document.querySelector('.completedTodoWrapper');
+
+  todo.forEach(todo => todo.addEventListener('click', (event) => {
+    let complete = document.createElement("li");     
+    let completedLi = document.createTextNode(todo.textContent);
+    complete.appendChild(completedLi);
+    completedTodoWrapper.insertBefore(complete, completed);
+    todo.remove();
+
+  }))
+
+
+
+</script>
+
+</html>

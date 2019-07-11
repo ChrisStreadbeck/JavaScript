@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title></title>
+</head>
+
+<style>
+  .hidden {
+    display: none;
+  }
+  .font {
+    font-size: 25px;
+  }
+
+</style>
+
+<body>
+  <!-- Add & Subtract -->
+  <button id = "addBtn">Add</button>
+  <button id = "subBtn">Subtract</button>
+  <div>
+    <h1 id = "count">0</h1>
+  </div>
+  <hr>
+
+  <!-- Peek-a-Boo -->
+  <button id = "toggleBtn">Show</button>
+  <div id="mainHeading" class="hidden">
+    <h1>Peek-a-Boo</h1>
+  </div>
+  <hr>
+
+  <!-- Toggle Hello & Goodbye -->
+  <button id = "greetingBtn">Toggle</button>
+  <div class="toggle">
+    <h1 id = greetingHeading>Hello</h1>
+  </div>
+  <hr>
+
+  <!-- Grow & Shrink -->
+  <button id = "grow">Grow</button>
+  <button id = "shrink">Shrink</button>
+  <div>
+    <p id = "size" class = "font">25</p>
+  </div>
+  <hr>
+
+
+
+
+</body>
+
+<script>
+  // ---Add & Subtract --------------
+  const add = document.getElementById('addBtn');
+  const sub = document.getElementById('subBtn');
+  const count = document.getElementById('count')
+  currentNumber = 0
+  add.addEventListener('click', () => {
+    count.innerHTML = Number(count.innerHTML) + 1;
+  });
+  sub.addEventListener('click', () => {
+    count.innerHTML = Number(count.innerHTML) - 1;
+  });
+
+  // ---Peek-a-Boo--------------
+  
+  const heading = document.getElementById('mainHeading');
+  const btn = document.getElementById('toggleBtn');
+  btn.addEventListener('click', () => {
+    if (btn.innerHTML == "Show") {
+    heading.classList.toggle('hidden');
+    btn.innerHTML = "Hide"
+  } else {
+    heading.classList.toggle('hidden');
+    btn.innerHTML = "Show"
+    }
+  })
+
+  // ---Toggle Hello & Goodbye------------
+
+  const otherHeading = document.getElementById('greetingHeading');
+  const otherbtn = document.getElementById('greetingBtn');
+  otherbtn.addEventListener('click', () => {
+    if (otherHeading.innerHTML == "Hello") {
+      otherHeading.classList.toggle('toggle');
+      otherHeading.innerHTML = "Goodbye"
+    } else {
+    otherHeading.classList.toggle('toggle');
+    otherHeading.innerHTML = "Hello"
+    }
+  })
+
+  // ---Grow & Shrink------------
+  const grow = document.getElementById('grow');
+  const shrink = document.getElementById('shrink');
+  
+  grow.addEventListener('click', (e) => {
+    document.getElementById("size").style.fontSize = "larger"
+    
+  })
+  shrink.addEventListener('click', (e) => {
+    document.getElementById("size").style.fontSize = "smaller"
+
+  })
+
+</script>
+
+</html>
